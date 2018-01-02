@@ -73,6 +73,7 @@ function LoadAvailableIncentives(){
                             saveIncentive.Name=incentive.Name;
                             saveIncentive.Type=incentive.Type;
                             saveIncentive.Plans=incentive.Plans;
+                            saveIncentive.Final_Pass = true;
                             saveIncentive.Conditions =[];
                             incentive.Conditions.forEach(function(condition){
                                 saveCondition ={};
@@ -97,7 +98,6 @@ function LoadAvailableIncentives(){
                                 if(!saveCondition.Pass) saveIncentive.Final_Pass = false;
                                 saveIncentive.Conditions.push(saveCondition);
                             })
-                        saveIncentive.Final_Pass = !!saveIncentive.Final_Pass;
                         saveData.push(saveIncentive);
                         });
                     dbHandler.IncentivesToSoldier[soldier.Pnumber] = saveData;
