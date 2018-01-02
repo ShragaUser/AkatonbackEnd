@@ -20,5 +20,12 @@ router.get('/SoldierData', function (req, res) {
   }
 })
 
+router.get('/IncentiveData', function (req, res) {
+  if(req.query){
+    res.status=200;
+    res.send(dbHandler.IncentivesToSoldier[req.query.pnumber]);
+  }
+})
+
 
 module.exports = router;
