@@ -21,7 +21,8 @@ var Soldier_data_Schema = Schema({
     Highly_Remarked: Boolean,
     Birth_Date: Date,
     Age: Number,
-    Vetek: Number
+    Vetek: Number,
+    Unit:Number
 });
 
 
