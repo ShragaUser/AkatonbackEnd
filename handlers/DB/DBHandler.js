@@ -94,8 +94,10 @@ function LoadAvailableIncentives(){
                                 }
                                 //checks if was ever true; if not than puts false
                                 saveCondition.Pass = !!saveCondition.Pass;
+                                if(!saveCondition.Pass) saveIncentive.Final_Pass = false;
                                 saveIncentive.Conditions.push(saveCondition);
                             })
+                        saveIncentive.Final_Pass = !!saveIncentive.Final_Pass;
                         saveData.push(saveIncentive);
                         });
                     dbHandler.IncentivesToSoldier[soldier.Pnumber] = saveData;
